@@ -1,5 +1,5 @@
 const two = function () {
-    console.log('two');
+    console.log("two");
 }
 
 export default two
