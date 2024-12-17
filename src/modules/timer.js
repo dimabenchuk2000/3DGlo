@@ -3,6 +3,8 @@ const timer = function (deadline) {
     const timerMinutes = document.getElementById("timer-minutes")
     const timerSeconds = document.getElementById("timer-seconds")
 
+    let idSetInterval
+
     const getTimeRemaining = function () {
         const dateStop = new Date(deadline).getTime()
         const dateNow = new Date().getTime()
@@ -19,14 +21,16 @@ const timer = function (deadline) {
     const timerRender = function () {
         const getTime = getTimeRemaining()
 
-        timerHours.textContent = getTime.hours
-        timerMinutes.textContent = getTime.minutes
-        timerSeconds.textContent = getTime.seconds
-
-        if (getTime.timeRemaining > 1) setTimeout(timerRender, 1000)
+        if (getTime.timeRemaining > 0) {
+            timerHours.textContent = getTime.hours.toString().padStart(2, "0")
+            timerMinutes.textContent = getTime.minutes.toString().padStart(2, "0")
+            timerSeconds.textContent = getTime.seconds.toString().padStart(2, "0")
+        } else {
+            clearInterval(idSetInterval)
+        }
     }
 
-    timerRender()
+    idSetInterval = setInterval(timerRender, 1000)
 }
 
 export default timer
