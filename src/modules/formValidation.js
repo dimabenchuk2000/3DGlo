@@ -51,7 +51,7 @@ const formValidation = () => {
   };
 
   const autoСorrection = function (e) {
-    if (e.target.className === "mess") {
+    if (e.target.className === "mess" && e.target.value !== "") {
       e.target.value = e.target.value.replace(/[^а-яА-Я\s-,]/g, "");
       e.target.value = e.target.value.replace(/^[\s-]*|[\s-]*$/g, "");
       e.target.value = e.target.value.replace(/([\s]+)/g, " ");
@@ -59,7 +59,7 @@ const formValidation = () => {
 
       e.target.value =
         e.target.value.split("")[0].toUpperCase() + e.target.value.slice(1);
-    } else if (e.target.type === "text") {
+    } else if (e.target.type === "text" && e.target.value !== "") {
       e.target.value = e.target.value.replace(/[^а-яА-Я]/g, "");
 
       e.target.value =
@@ -70,6 +70,7 @@ const formValidation = () => {
       e.target.value = e.target.value.replace(/([-]+)/g, "-");
     } else if (e.target.type === "tel") {
       e.target.value = e.target.value.replace(/[^\d-+()]/g, "");
+      // eslint-disable-next-line no-dupe-else-if
     }
   };
 
