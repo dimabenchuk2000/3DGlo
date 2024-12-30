@@ -4,6 +4,7 @@ import modal from "./modules/modal";
 import smoothScrolling from "./modules/smoothScrolling";
 import formValidation from "./modules/formValidation";
 import tabs from "./modules/tabs";
+import slider from "./modules/slider";
 
 timer("31 december 2024 23:59:59");
 menu();
@@ -11,3 +12,4 @@ modal();
 smoothScrolling();
 formValidation();
 tabs();
+slider();
