@@ -52,7 +52,7 @@ const formValidation = () => {
 
   const autoСorrection = function (e) {
     if (e.target.className === "mess" && e.target.value !== "") {
-      e.target.value = e.target.value.replace(/[^а-яА-Я\s-,]/g, "");
+      e.target.value = e.target.value.replace(/[^а-яА-Я\s-,?]/g, "");
       e.target.value = e.target.value.replace(/^[\s-]*|[\s-]*$/g, "");
       e.target.value = e.target.value.replace(/([\s]+)/g, " ");
       e.target.value = e.target.value.replace(/([-]+)/g, "-");
