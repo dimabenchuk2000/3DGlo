@@ -22,6 +22,7 @@ const slider = ({
       dotsBlock.innerHTML += `<li class=${dotClass}></li>`;
     });
     dots = sliderBlock.querySelectorAll(`.${dotClass}`);
+    dots[0].classList.add(activeDotClass);
   };
 
   const prevSlide = (elems, index, strClass) => {
