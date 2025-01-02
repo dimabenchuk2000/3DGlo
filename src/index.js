@@ -13,5 +13,15 @@ modal();
 smoothScrolling();
 formValidation();
 tabs();
-slider();
+slider({
+  sliderBlockClass: "portfolio-content",
+  slideClass: "portfolio-item",
+  dotsBlockClass: "portfolio-dots",
+  dotClass: "dot",
+  activeSlideClass: "portfolio-item-active",
+  activeDotClass: "dot-active",
+  buttonClass: "portfolio-btn",
+  buttonRight: "arrow-right",
+  buttonLeft: "arrow-left",
+});
 sliderCarousel();
