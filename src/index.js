@@ -6,6 +6,7 @@ import formValidation from "./modules/formValidation";
 import tabs from "./modules/tabs";
 import slider from "./modules/slider";
 import sliderCarousel from "./modules/sliderCarousel";
+import calc from "./modules/calc";
 
 timer("23 february 2025");
 menu();
@@ -25,3 +26,4 @@ slider({
   buttonLeft: "arrow-left",
 });
 sliderCarousel();
+calc(100);
