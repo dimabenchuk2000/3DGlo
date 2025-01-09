@@ -17,4 +17,27 @@ const animate = ({ timing, draw, duration }) => {
   });
 };
 
-export { animate };
+const validationForm = function (formElements) {
+  let isError = false;
+
+  formElements.forEach((input) => {
+    if (input.name === "user_name" && /[^а-яА-Я]/g.test(input.value)) {
+      isError = true;
+    }
+
+    if (input.name === "user_phone" && /[^\d-+()]/g.test(input.value)) {
+      isError = true;
+    }
+
+    if (
+      input.name === "user_message" &&
+      /[^а-яА-Я\s\d-,.]/g.test(input.value)
+    ) {
+      isError = true;
+    }
+  });
+
+  return isError;
+};
+
+export { animate, validationForm };

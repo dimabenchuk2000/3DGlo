@@ -22,30 +22,6 @@ const formValidation = () => {
     form2Message,
   ];
 
-  const validationForm = function (
-    e,
-    inputName,
-    inputEmail,
-    inputPhone,
-    inputText
-  ) {
-    e.preventDefault();
-
-    let isError = false;
-
-    if (/[^а-яА-Я]/g.test(inputName.value)) isError = true;
-
-    if (/[^\w@.\-*!~']/g.test(inputEmail.value)) isError = true;
-
-    if (/[^\d-+()]/g.test(inputPhone.value)) isError = true;
-
-    if (inputText) if (/[^а-яА-Я\s-,]/g.test(inputText.value)) isError = true;
-
-    if (!isError) {
-      alert("Данные отправлены");
-    }
-  };
-
   const validationCalc = function (e) {
     e.target.value = e.target.value.replace(/[^\d]/, "");
   };
@@ -70,7 +46,6 @@ const formValidation = () => {
       e.target.value = e.target.value.replace(/([-]+)/g, "-");
     } else if (e.target.type === "tel") {
       e.target.value = e.target.value.replace(/[^\d-+()]/g, "");
-      // eslint-disable-next-line no-dupe-else-if
     }
   };
 
@@ -79,14 +54,6 @@ const formValidation = () => {
   );
 
   allInputs.forEach((input) => input.addEventListener("blur", autoСorrection));
-
-  form1.addEventListener("submit", () => {
-    validationForm(event, form1Name, form1Email, form1Phone);
-  });
-
-  form2.addEventListener("submit", () => {
-    validationForm(event, form2Name, form2Email, form2Phone, form2Message);
-  });
 };
 
 export default formValidation;
