@@ -31,7 +31,7 @@ const validationForm = function (formElements) {
 
     if (
       input.name === "user_message" &&
-      /[^а-яА-Я\s\d-,.]/g.test(input.value)
+      /[^а-яА-Я\s\d-,.?]/g.test(input.value)
     ) {
       isError = true;
     }

@@ -9,11 +9,19 @@ import sliderCarousel from "./modules/sliderCarousel";
 import calc from "./modules/calc";
 import sendForm from "./modules/sendForm";
 
-timer("23 february 2025");
+timer("25 january 2025");
 menu();
 modal();
 smoothScrolling();
-formValidation();
+formValidation({
+  formId: "form1",
+});
+formValidation({
+  formId: "form2",
+});
+formValidation({
+  formId: "form3",
+});
 tabs();
 slider({
   sliderBlockClass: "portfolio-content",
